@@ -1,0 +1,274 @@
+.floating-analyze-btn {
+  position: fixed;
+  padding: 8px 16px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100000;
+  transition: background-color 0.3s;
+}
+
+.floating-analyze-btn:hover {
+  background-color: #219a52;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.analyzer-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 100001;
+  max-width: 700px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+.analyzer-modal h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.analyzer-modal .result-content {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #2c3e50;
+  white-space: pre-wrap;
+  padding: 15px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  min-height: 100px;
+}
+
+.analyzer-modal .result-content br {
+  display: block;
+  margin: 8px 0;
+  content: "";
+}
+
+.analyzer-modal .result-content p {
+  margin: 8px 0;
+}
+
+/* Highlight important elements */
+.analyzer-modal .highlight-step {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.analyzer-modal .highlight-tool {
+  color: #059669;
+  font-weight: 500;
+  background-color: rgba(5, 150, 105, 0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.analyzer-modal .highlight-insight {
+  color: #7c3aed;
+  font-weight: 500;
+}
+
+.analyzer-modal .highlight-conclusion {
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.analyzer-modal .emoji-icon {
+  font-size: 16px;
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.analyzer-modal .section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 15px 0 8px;
+  color: #1a1a1a;
+}
+
+.analyzer-modal .follow-up {
+  margin-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 15px;
+}
+
+.analyzer-modal input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: border-color 0.2s;
+}
+
+.analyzer-modal input:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.analyzer-modal button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.2s;
+}
+
+.analyzer-modal button.follow-up-button {
+  background-color: #2563eb;
+  color: white;
+}
+
+.analyzer-modal button.follow-up-button:hover {
+  background-color: #1d4ed8;
+}
+
+.analyzer-modal button.secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.analyzer-modal button.secondary:hover {
+  background-color: #4b5563;
+}
+
+.analyzer-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100000;
+  backdrop-filter: blur(2px);
+}
+
+.analyze-button {
+  position: absolute;
+  padding: 8px 16px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 10000;
+  display: none;
+  transition: all 0.2s ease;
+}
+
+.analyze-button:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.analyzer-modal.loading {
+  opacity: 0.8;
+}
+
+/* Add these new highlight classes */
+.analyzer-modal .highlight-keyword {
+  color: #0891b2;
+  font-weight: 500;
+  background-color: rgba(8, 145, 178, 0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.analyzer-modal .highlight-quote {
+  color: #0d9488;
+  font-style: italic;
+}
+
+.analyzer-modal .highlight-metric {
+  color: #6366f1;
+  font-weight: 500;
+}
+
+/* Improve readability of highlighted content */
+.analyzer-modal .result-content {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #2c3e50;
+  white-space: pre-wrap;
+  padding: 15px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+}
+
+.analyzer-modal .result-content p {
+  margin: 8px 0;
+}
+
+/* Add subtle transition for highlights */
+.analyzer-modal .highlight-keyword,
+.analyzer-modal .highlight-quote,
+.analyzer-modal .highlight-metric,
+.analyzer-modal .highlight-step,
+.analyzer-modal .highlight-tool,
+.analyzer-modal .highlight-insight,
+.analyzer-modal .highlight-conclusion {
+  transition: all 0.2s ease;
+}
+
+.analyzer-modal .highlight-keyword:hover,
+.analyzer-modal .highlight-quote:hover,
+.analyzer-modal .highlight-metric:hover {
+  opacity: 0.8;
+}
+
+/* Add a blinking cursor effect */
+.analyzer-modal .result-content::after {
+  content: '|';
+  animation: blink 1s infinite;
+  font-weight: normal;
+  display: inline-block;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Hide cursor when typing is complete */
+.analyzer-modal .result-content.typing-complete::after {
+  display: none;
+}

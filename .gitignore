@@ -1,0 +1,23 @@
+# API Keys and Secrets
+config.js
+secrets.json
+.env
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build/Debug files
+*.log
+debug.log 
